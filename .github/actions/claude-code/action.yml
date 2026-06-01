@@ -1,0 +1,13 @@
+name: "Claude Code Review"
+description: "Run Claude Code Review"
+
+inputs:
+  ANTHROPIC_API_KEY:
+    required: true
+
+runs:
+  using: "composite"
+  steps:
+    - uses: anthropics/claude-code-action@v1
+      with:
+        anthropic_api_key: ${{ inputs.ANTHROPIC_API_KEY }}
